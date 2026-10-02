@@ -1,4 +1,213 @@
-/* This is your CSS files */
+/* Base typography and sizing */
+* {
+  box-sizing: border-box;
+}
+
 body {
-    color: black
+  margin: 0;
+  color: #000000;
+  background: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid #245db0;
+  outline-offset: 4px;
+}
+
+/* Header */
+.main-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 6px 16px 6px 44px;
+  color: #ffffff;
+  background: #dc4c3e;
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.quick-find {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 230px;
+  min-width: 0;
+  padding: 4px 8px;
+  border-radius: 3px;
+  background: rgb(255 255 255 / 22%);
+}
+
+.quick-find img,
+.task-counter img {
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.quick-find input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  color: #ffffff;
+  background: transparent;
+}
+
+.quick-find input::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.task-counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin: 0 0 0 auto;
+}
+
+/* Sidebar and page layout use Flexbox */
+.workspace {
+  display: flex;
+  min-height: calc(100vh - 44px);
+}
+
+.sidebar {
+  flex: 0 0 300px;
+  width: 300px;
+  padding: 30px 5px 30px 35px;
+  background: #fefbf2;
+}
+
+.navigation-list,
+.task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 35px;
+  padding: 7px 10px;
+  border-radius: 3px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.navigation-link img {
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.navigation-link[aria-current="page"] {
+  background: #ffffff;
+  font-weight: 700;
+}
+
+.task-count {
+  margin-left: -3px;
+  color: #7e7d79;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* Inbox and circular task controls */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 32px 54px;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.task-list li {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 41px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.task-item input {
+  appearance: none;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  border: 1.5px solid #aaaaaa;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.task-item input:checked {
+  border-color: #dc4c3e;
+  background: #dc4c3e;
+  box-shadow: inset 0 0 0 4px #ffffff;
+}
+
+/* Keep content comfortable when the visible sidebar leaves less room. */
+@media (max-width: 760px) {
+  .main-content {
+    padding: 32px 24px;
+  }
+}
+
+/* Mobile: hide navigation at exactly 480px and below. */
+@media (max-width: 480px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-header {
+    gap: 10px;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .quick-find {
+    flex: 1;
+    width: auto;
+  }
+
+  .main-content {
+    padding: 28px 24px;
+  }
 }

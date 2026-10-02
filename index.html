@@ -1,9 +1,63 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <!-- Link your CSS file and other references here -->
-    </head>
-    <body>
-        <!-- Content goes here -->
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inbox | Task Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="main-header">
+      <button class="menu-button" type="button" aria-label="Menu">
+        <img src="assets/menu_icon.png" alt="" width="20" height="20">
+      </button>
+      <search class="quick-find">
+        <img src="assets/search_icon.png" alt="" width="20" height="20">
+        <input type="search" aria-label="Quick find" placeholder="Quick find">
+      </search>
+      <p class="task-counter" aria-label="Task count: 30 out of 5">
+        <img src="assets/check_icon.png" alt="" width="20" height="20">
+        <span>30/5</span>
+      </p>
+    </header>
+    <div class="workspace">
+      <nav class="sidebar" aria-label="Task categories">
+        <ul class="navigation-list">
+          <li>
+            <a class="navigation-link" href="#inbox" aria-current="page">
+              <img src="assets/inbox_icon.png" alt="" width="20" height="20">
+              <span>Inbox</span><span class="task-count">5</span>
+            </a>
+          </li>
+          <li>
+            <a class="navigation-link" href="#today">
+              <img src="assets/calendar_icon.png" alt="" width="20" height="20">
+              <span>Today</span><span class="task-count">5</span>
+            </a>
+          </li>
+          <li>
+            <a class="navigation-link" href="#upcoming">
+              <img src="assets/upcoming_icon.png" alt="" width="20" height="20">
+              <span>Upcoming</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <main class="main-content">
+        <section id="inbox" aria-labelledby="inbox-heading">
+          <h1 id="inbox-heading">Inbox</h1>
+          <ul class="task-list">
+            <li><label class="task-item"><input type="checkbox"><span>Call Mom</span></label></li>
+            <li><label class="task-item"><input type="checkbox"><span>Buy the new issue of Scientific American</span></label></li>
+            <li><label class="task-item"><input type="checkbox"><span>Return the textbook to Josie</span></label></li>
+            <li><label class="task-item"><input type="checkbox"><span>Buy the new album by Rake</span></label></li>
+            <li><label class="task-item"><input type="checkbox"><span>Buy a gift card for Dad</span></label></li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>
